@@ -28,7 +28,8 @@ namespace RobotPajamas
                 result = _logger.Initialize();
                 if (!result)
                 {
-                    var boxResult = MessageBox.Show("Please make sure Bluegiga BLEGUI is open",
+                    var boxResult = MessageBox.Show(
+                        "Please make sure Bluegiga BLEGUI is open",
                         "Bluegiga not open",
                         MessageBoxButtons.RetryCancel);
                     if (boxResult == DialogResult.Cancel)
@@ -38,7 +39,6 @@ namespace RobotPajamas
                     }
                 }
             } while (!result);
-
 
             _timer.Tick += new EventHandler(OnTimedEvent);
             _timer.Interval = 5000;
@@ -97,7 +97,6 @@ namespace RobotPajamas
                 _timer.Enabled = true;
             }
         }
-
 
         private void radioButtons_CheckedChanged(object sender, EventArgs e)
         {

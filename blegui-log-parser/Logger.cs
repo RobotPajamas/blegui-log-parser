@@ -66,26 +66,26 @@ namespace RobotPajamas
             foreach (var line in capturedText.Split('\n'))
             {
                 if (line.Contains(filterString))
-                { 
-                        filteredText.Append(line);
-                        filteredText.Append(Environment.NewLine);
-                        //Console.WriteLine(line);
-                        //var timestamp = line.Substring(0, 23);
-                        //var valueStart = line.IndexOf("value:") + 6;
-                        //var valueEnd = line.Length - 1;
-                        //var hexValue = line.Substring(valueStart, (valueEnd - valueStart));
+                {
+                    filteredText.Append(line);
+                    filteredText.Append(Environment.NewLine);
+                    //Console.WriteLine(line);
+                    //var timestamp = line.Substring(0, 23);
+                    //var valueStart = line.IndexOf("value:") + 6;
+                    //var valueEnd = line.Length - 1;
+                    //var hexValue = line.Substring(valueStart, (valueEnd - valueStart));
 
-                        //var value = new StringBuilder();
-                        //for (int i = 0; i < hexValue.Length; i += 2)
-                        //{
-                        //    string hs = hexValue.Substring(i, 2);
-                        //    value.Append(Convert.ToChar(Convert.ToUInt32(hs, 16)));
-                        //} 
+                    //var value = new StringBuilder();
+                    //for (int i = 0; i < hexValue.Length; i += 2)
+                    //{
+                    //    string hs = hexValue.Substring(i, 2);
+                    //    value.Append(Convert.ToChar(Convert.ToUInt32(hs, 16)));
+                    //} 
 
-                        //filteredText.Append(timestamp);
-                        //filteredText.Append(" ");
-                        //filteredText.Append(value.ToString());
-                        //filteredText.Append(Environment.NewLine);
+                    //filteredText.Append(timestamp);
+                    //filteredText.Append(" ");
+                    //filteredText.Append(value.ToString());
+                    //filteredText.Append(Environment.NewLine);
                 }
             }
             return filteredText.ToString();
@@ -116,10 +116,12 @@ namespace RobotPajamas
                 if (windows != null && windows.Length > 0)
                 {
                     foreach (IntPtr hWnd in windows)
+                    {
                         if (GetText(hWnd) == ("pushLogCopy"))
                         {
                             return hWnd;
                         }
+                    }
                 }
             }
 
@@ -201,7 +203,7 @@ namespace RobotPajamas
             {
                 SendMessage(hWndParent, BM_CLICK, (IntPtr)0, (IntPtr)0);
             }
-            
+
             return title;
         }
     }
