@@ -1,5 +1,7 @@
 # blegui-log-parser
 
+## This project is no longer maintained as the BLE113 is a "legacy" product for Silicon Labs
+
 A way to make BLEGUI's logs useful!
 
 Please refer to http://www.sureshjoshi.com/development/blegui-log-parsing-and-filtering/ and http://www.sureshjoshi.com/development/summer-of-bluegiga-code/
